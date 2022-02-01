@@ -20,6 +20,7 @@
                 <th>Tìtulo</th>
                 <th>Autor</th>
                 <th>Fecha</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,7 @@
                     <td>{{$noticia->titulo}}</td>
                     <td>{{$noticia->autor}}</td>
                     <td>{{$noticia->fecha}}</td>
+                    <th><a href="{{ route('noticias.edit', $noticia->id) }}">Editar</a></th>
                 </tr>
             @endforeach
         </tbody>

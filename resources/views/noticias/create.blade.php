@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Nueva Noticia</h1>
-    <a href="{{route('noticias.index')}}">Regresar</a>
+    <a href="{{route('noticias.index')}}">Volver a la seccion de noticias</a>
     <form method="post" action="{{route('noticias.store')}}">
         @csrf
         <label>Titulo</label>

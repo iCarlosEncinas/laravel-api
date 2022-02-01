@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('/noticias', 'NoticiasController@index')->name('noticias.index');
 Route::get('/noticias/create', 'NoticiasController@create')->name('noticias.create');
 Route::post('/noticias/store', 'NoticiasController@store')->name('noticias.store');
+Route::get('/noticias/{id}/edit', 'NoticiasController@edit')->name('noticias.edit');
+Route::put('/noticias/{id}/update', 'NoticiasController@update')->name('noticias.update');
