@@ -61,4 +61,16 @@ class NoticiasController extends Controller
         }
         return redirect()->route('noticias.index')->with('error', 'no se encontró la noticia');
     }
+
+    public function destroy($id){
+        $noticia = Noticia::find($id);
+        if ($noticia){
+            //si la encuentra, la borra
+            if($noticia->delete()){
+                return redirect()->route('noticias.index')->with('exito', 'noticia eliminada');
+            }
+            return redirect()->route('noticias.index')->with('error', 'No se pudo eliminar noticia.');
+        }
+        return redirect()->route('noticias.index')->with('error', 'no se encontró la noticia');
+    }
 }

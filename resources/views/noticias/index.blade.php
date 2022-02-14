@@ -29,7 +29,17 @@
                     <td>{{$noticia->titulo}}</td>
                     <td>{{$noticia->autor}}</td>
                     <td>{{$noticia->fecha}}</td>
-                    <th><a href="{{ route('noticias.edit', $noticia->id) }}">Editar</a></th>
+                    <td>
+                        <form method="post" action="{{ route('noticias.destroy', $noticia->id) }}">
+                            @csrf
+                            @method('delete')
+                                <a href="{{ route('noticias.edit', $noticia->id) }}">
+                                    Editar
+                                </a>
+                                <button type="submit">Eliminar</button>
+                        </form>
+
+                    </td>
                 </tr>
             @endforeach
         </tbody>
